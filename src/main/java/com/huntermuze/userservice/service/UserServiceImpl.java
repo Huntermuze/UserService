@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService{
     @Autowired
     UserRepository userRepository;
     @Autowired
