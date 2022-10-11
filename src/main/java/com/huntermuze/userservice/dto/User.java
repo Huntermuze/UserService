@@ -3,7 +3,7 @@ package com.huntermuze.userservice.dto;
 import java.util.Objects;
 
 public class User {
-    private String id;
+    private long id;
     private String name;
     private String address;
     private int age;
@@ -11,7 +11,7 @@ public class User {
     private String email;
     private String mobileNumber;
 
-    public User(String id, String name, String address, int age, String job, String email, String mobileNumber) {
+    public User(long id, String name, String address, int age, String job, String email, String mobileNumber) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -25,11 +25,11 @@ public class User {
 
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

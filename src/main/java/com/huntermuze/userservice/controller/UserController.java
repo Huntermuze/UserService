@@ -10,12 +10,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(path = "/user")
+@RequestMapping(path = "/users")
 public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping(path = "/users")
+    @GetMapping
     public ResponseEntity<Object> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Object> addUser(@RequestBody User user) {
-        userService.updateUser(user);
+        userService.addUser(user);
         URI loc = ServletUriComponentsBuilder.fromCurrentRequest()
                 .buildAndExpand(user.getId())
                 .toUri();

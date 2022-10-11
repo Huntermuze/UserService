@@ -7,8 +7,7 @@ import java.util.Objects;
 @Table(name = "User")
 public class UserPOJO {
     @Id
-    @GeneratedValue
-    private String id;
+    private long id;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "address", nullable = false, unique = true)
@@ -22,7 +21,7 @@ public class UserPOJO {
     @Column(name = "mobile_number", nullable = false, unique = true)
     private String mobileNumber;
 
-    public UserPOJO(String id, String name, String address, int age, String job, String email, String mobileNumber) {
+    public UserPOJO(long id, String name, String address, int age, String job, String email, String mobileNumber) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -36,11 +35,11 @@ public class UserPOJO {
 
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
